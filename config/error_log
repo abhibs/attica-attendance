@@ -1,0 +1,12 @@
+[23-May-2026 09:28:35 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/atticagold/public_html/config/queue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/atticagold/public_html/config/queue.php on line 16
+[23-May-2026 09:28:35 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/atticagold/public_html/config/app.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/atticagold/public_html/config/app.php on line 18
+[23-May-2026 09:28:35 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/atticagold/public_html/config/cache.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/atticagold/public_html/config/cache.php on line 18
