@@ -24,11 +24,10 @@ return new class extends Migration
             // $table->engine('InnoDB');
             $table->bigIncrements('id'); // permission id
             $table->string('name');       // For MyISAM use string('name', 225); // (or 166 for InnoDB with Redundant/Compact row format)
-            $table->string('guard_name'); // For MyISAM use string('guard_name', 25);
-            $table->string('group_name')->nullbable();
+            $table->string('guard_name')->default('admin'); // For MyISAM use string('guard_name', 25);
+            $table->string('group_name')->nullable();
             $table->timestamps();
 
-            $table->unique(['name', 'guard_name']);
         });
 
         Schema::create($tableNames['roles'], static function (Blueprint $table) use ($teams, $columnNames) {

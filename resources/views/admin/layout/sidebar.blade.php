@@ -516,6 +516,21 @@
                     </ul>
                 </li>
             @endif
+
+            <li class="{{ request()->routeIs('admin-all-permission', 'admin-add-permission', 'edit.permission') ? 'mm-active' : '' }}">
+                <a href="javascript:;" class="has-arrow" aria-expanded="{{ request()->routeIs('admin-all-permission', 'admin-add-permission', 'edit.permission') ? 'true' : 'false' }}">
+                    <div class="parent-icon"><i class="material-icons-outlined">assessment</i></div>
+                    <div class="menu-title">Roles And Permission</div>
+                </a>
+                <ul class="{{ request()->routeIs('admin-all-permission', 'admin-add-permission', 'edit.permission') ? 'mm-show' : '' }}">
+                    <li class="{{ request()->routeIs('admin-all-permission') ? 'mm-active' : '' }}">
+                        <a href="{{ route('admin-all-permission') }}"><i class="material-icons-outlined">arrow_right</i>All Permission</a>
+                    </li>
+                    <li class="{{ request()->routeIs('admin-add-permission') ? 'mm-active' : '' }}">
+                        <a href="{{ route('admin-add-permission') }}"><i class="material-icons-outlined">arrow_right</i>Add Permission</a>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </div>
 </aside>

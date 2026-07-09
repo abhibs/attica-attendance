@@ -17,6 +17,8 @@ use App\Http\Controllers\Admin\SalaryController;
 use App\Http\Controllers\Admin\TeTrackerController;
 use App\Http\Controllers\Admin\VmAttendanceController;
 use App\Http\Controllers\Admin\WorkVisitController;
+use App\Http\Controllers\Admin\RoleController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -187,5 +189,25 @@ Route::group(
 
 
         );
-    }
+
+
+
+
+                Route::group(
+            ['middleware' => 'auth:admin'],
+            function () {
+        Route::get('/all/permission', [RoleController::class, 'allPermission'])->name('admin-all-permission');
+        Route::get('/add/permission', [RoleController::class, 'addPermission'])->name('admin-add-permission');
+        Route::post('/store/permission', [RoleController::class, 'storePermission'])->name('permission.store');
+        Route::get('/edit/permission/{id}', [RoleController::class, 'editPermission'])->name('edit.permission');
+        Route::post('/update/permission/{id}', [RoleController::class, 'updatePermission'])->name('permission.update');
+        Route::get('/delete/permission/{id}', [RoleController::class, 'deletePermission'])->name('delete.permission');
+
+
+                });
+            }
+
+
+
+
 );
